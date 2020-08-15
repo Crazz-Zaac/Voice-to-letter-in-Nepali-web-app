@@ -13,9 +13,9 @@ pip install -r requirements.txt
 
 ## Running the application
 ```bash
-streamlit run app.y
+streamlit run app.py
 ```
-Note: Make sure you're inside the root folder where ```bash app.py``` is there.
+Note: Make sure you're inside the root folder where ``` app.py``` is there.
 
 ## Using Ngrok 
 In case you're using ngrok, you might want to run in the port 8501.
