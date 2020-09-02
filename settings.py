@@ -11,7 +11,7 @@ DEFAULT_SAMPLE_RATE = 16000
 MAX_INPUT_CHANNELS = 1
 WAVE_OUTPUT_FILE = os.path.join(RECORDING_DIR, "recorded.wav")
 
-# READ_FILE = os.path.join(RECORDING_DIR, "recorded.wav")
+MODEL_DIR = os.path.join(ROOT_DIR, 'model')
 
 DURATION = 1 #1 second
 CHUNK_SIZE = 1000
