@@ -1,5 +1,6 @@
 from settings import MODEL_DIR
-from keras.models import load_model
+import streamlit as st
+#from keras.models import load_model
 from app import ReadAudio
 import librosa, os
 import numpy as np
@@ -13,10 +14,10 @@ classes = list(le.classes_)
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-model = load_model(MODEL_DIR)
+# model = load_model(MODEL_DIR)
 
-class PredictAudio:
-	def predict(audio):
+class PredAudio:
+	def pred(audio):
 		#resampling the recorded audio
 		samples, sample_rate = librosa.load(audio, sr=16000)
 		st.write('Samples: ', samples)

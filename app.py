@@ -8,7 +8,7 @@ import streamlit as st
 from PIL import Image
 from settings import IMAGE_DIR, DURATION, WAVE_OUTPUT_FILE, CSS_DIR
 from scipy.io.wavfile import write
-from predict import PredictAudio
+# from predict_audio import PredAudio
 
 class ReadAudio: #reading the recorded audio
 	def readAudio():
@@ -33,7 +33,7 @@ class ExploreAudio: #for visualizing recorded audio
 			ax1.set_xlabel('time', fontsize=15)
 			ax1.set_ylabel('Amplitude', fontsize=15)
 			ax1.plot(np.linspace(0, sample_rate/len(samples), sample_rate), samples)
-			st.pyplot()
+			st.pyplot(fig)
 		st.success('Completed')
 
 		#resampling the the recorded audio
@@ -84,11 +84,9 @@ def main():
 
 
 	if st.sidebar.button('Predict'):
+		from predict_audio import PredAudio
 		audio_file = ReadAudio.readAudio()	
-		PredictAudio.predict(audio_file)
-
-
-
+		paud = PredAudio.pred(audio_file)
 
 if __name__ == '__main__':
 	main()
